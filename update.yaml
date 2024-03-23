@@ -3,5 +3,5 @@
   become: true
   tasks:
     - name: update apt
-        upgrade: yes
-        update_cache: yes
+      upgrade: yes
+      update_cache: yes
