@@ -1,12 +1,12 @@
 ---
 all:
   hosts:
-    awx-managed-host-1:
+    awx-managed-PI:
       ansible_host: 172.168.1.81
       ansible_user: andre
       ansible_password: Fda2qRs!!!
       ansible_become_pass: Fda2qRs!!!
-    awx-managed-host-2:
+    awx-managed-Tower:
       ansible_host: 172.168.10.21
       ansible_user: andre
       ansible_password: Fda2qRs!!!
