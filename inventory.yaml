@@ -1,7 +1,7 @@
 ---
 all:
   hosts:
-    awx-managed-tower:
+    Pig:
       ansible_host: 172.168.10.21
       ansible_user: andre
       ansible_password: Fda2qRs!!!

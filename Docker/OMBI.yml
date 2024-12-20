@@ -1,0 +1,18 @@
+- name: Run OMBI container
+  hosts: Pig
+  tasks:
+    - name: Start OMBI container
+      docker_container:
+        name: ombi
+        image: lscr.io/linuxserver/ombi:latest
+        state: started
+        restart_policy: unless-stopped
+        env:
+          PUID: 1000
+          PGID: 1000
+          BASE_URL: /ombi
+          TZ: Europe/London
+        ports:
+          - "3579:3579"
+        volumes:
+          - /NVMe/Docker/OMBI:/config

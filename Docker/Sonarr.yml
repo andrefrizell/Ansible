@@ -1,0 +1,19 @@
+- name: Run Sonarr container
+  hosts: Pig
+  tasks:
+    - name: Run Sonarr container
+      docker_container:
+        name: Sonarr
+        image: lscr.io/linuxserver/sonarr:latest
+        state: started
+        restart_policy: unless-stopped
+        ports:
+          - "8989:8989"
+        env:
+          PUID: 1000
+          PGID: 1000
+          TZ: Europe/London
+        volumes:
+          - /NVMe/Docker/sonarrTest:/config
+          - /Data/Medida/TV:/TV
+          - /Data/Downloads:/downloads

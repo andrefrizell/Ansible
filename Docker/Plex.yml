@@ -1,0 +1,27 @@
+- name: Run Plex container
+  hosts: Pig
+  tasks:
+    - name: Run Plex Docker container
+      docker_container:
+        name: plex
+        image: plexinc/pms-docker
+        state: started
+        restart_policy: unless-stopped
+        ports:
+          - "32400:32400"
+          - "8324:8324"
+          - "32469:32469"
+          - "1900:1900/udp"
+          - "32410:32410/udp"
+          - "32412:32412/udp"
+          - "32413:32413/udp"
+          - "32414:32414/udp"
+        env:
+          TZ: "Europe/London"
+          PLEX_CLAIM: "claim-oZzSS47tJhLYgfZFzFtm"
+          ADVERTISE_IP: "http://172.168.10.21:32400/"
+        hostname: pig
+        volumes:
+          - /NVMe/Docker/Plex:/config
+          - /NVMe/Plex/transcode:/transcode
+          - /Data/Media:/data

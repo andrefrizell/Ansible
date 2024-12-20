@@ -1,0 +1,20 @@
+- name: Run Docker container with Surfshark VPN
+  hosts: Pig
+  tasks:
+    - name: Run gluetun container
+      docker_container:
+        name: gluetun
+        image: qmcgaw/gluetun
+        state: started
+        cap_add:
+          - NET_ADMIN
+        ports:
+          - "9091:9091"
+        env:
+          VPN_SERVICE_PROVIDER: surfshark
+          VPN_TYPE: wireguard
+          WIREGUARD_PRIVATE_KEY: SAduTTn+OWGokQ7ygwTLbUXdk3Or/OCscvhWEPCiwE8=
+          WIREGUARD_ADDRESSES: "10.14.0.2/16"
+          SERVER_COUNTRIES: Netherlands
+        tty: yes
+        interactive: yes

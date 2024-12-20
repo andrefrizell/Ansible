@@ -1,0 +1,18 @@
+---
+- name: Run Prowlarr Docker container
+  hosts: Pig
+  tasks:
+    - name: Ensure Prowlarr container is running
+      docker_container:
+        name: Prowlarr
+        image: lscr.io/linuxserver/prowlarr:latest
+        state: started
+        restart_policy: unless-stopped
+        ports:
+          - "9696:9696"
+        env:
+          PUID: 1000
+          PGID: 1000
+          TZ: Europe/London
+        volumes:
+          - /NVMe/Docker/prowlarr:/config

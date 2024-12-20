@@ -1,0 +1,16 @@
+---
+- name: Run Portainer container
+  hosts: Pig
+  tasks:
+    - name: Run Portainer container
+      docker_container:
+        name: portainer
+        image: portainer/portainer-ee:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "8000:8000"
+          - "9443:9443"
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - /NVMe/Docker/Portainer:/data

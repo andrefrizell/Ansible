@@ -1,0 +1,17 @@
+- name: Run Overseerr container
+  hosts: Pig
+  tasks:
+    - name: Run Overseerr container
+      docker_container:
+        name: overseerr
+        image: lscr.io/linuxserver/overseerr:latest
+        state: started
+        restart_policy: unless-stopped
+        env:
+          PUID: 1000
+          PGID: 1000
+          TZ: Europe/London
+        ports:
+          - "5055:5055"
+        volumes:
+          - /NVNe/Docker/Overseerr:/config

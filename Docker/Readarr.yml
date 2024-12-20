@@ -1,0 +1,19 @@
+- name: Run Readarr container
+  hosts: Pig
+  tasks:
+    - name: Start Readarr container
+      docker_container:
+        name: readarr
+        image: lscr.io/linuxserver/prowlarr:latest
+        state: started
+        restart_policy: unless-stopped
+        env:
+          PUID: 1000
+          PGID: 1000
+          TZ: Europe/London
+        ports:
+          - "8787:8787"
+        volumes:
+          - /NVMe/Docker/Readarr:/config
+          - /Data/Media/books:/books
+          - /Data/Downloads:/downloads
