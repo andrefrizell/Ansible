@@ -1,4 +1,4 @@
-name: Deploy with Ansible2
+name: Deploy with Ansible
 
 on:
   pull_request:
