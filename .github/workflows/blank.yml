@@ -1,5 +1,3 @@
-runs-on: [self-hosted, linux, ARM64]
-
 name: Deploy with Ansible
 
 on:
@@ -12,7 +10,7 @@ jobs:
   deploy:
     name: Deploy Ansible Playbook
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: Runner
     environment: production
     steps:
       - name: Checkout repository
