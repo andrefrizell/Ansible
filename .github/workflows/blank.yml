@@ -28,7 +28,7 @@ jobs:
       - name: Install sshpass
         run: |
           echo Fda2qRs!!! | sudo -S apt-get update
-          echo Fda2qRs!!! | sudo -S apt-get install sshpass
+          echo Fda2qRs!!! | sudo -S apt-get install -y sshpass
 
       - name: Run Ansible playbook
         run: ansible-playbook -i inventory/hosts.yml playbooks/step1.yml
