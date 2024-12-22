@@ -1,4 +1,4 @@
-- hosts: Local
+- hosts: Test
   become: true
   vars:
     container_count: 1
