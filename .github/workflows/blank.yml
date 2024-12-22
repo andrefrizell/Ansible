@@ -27,3 +27,4 @@ jobs:
 
       - name: Run Ansible playbook
         run: ansible-playbook playbooks/step1.yml
+        
