@@ -1,5 +1,5 @@
 - name: Run Overseerr container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Run Overseerr container
       docker_container:

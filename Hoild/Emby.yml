@@ -1,5 +1,5 @@
 - name: Run Emby container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Start Emby container
       docker_container:

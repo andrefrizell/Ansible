@@ -1,5 +1,5 @@
 - name: Run Lidarr container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Run Lidarr container
       docker_container:

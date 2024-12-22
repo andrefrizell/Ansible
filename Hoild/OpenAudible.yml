@@ -1,5 +1,5 @@
 - name: Run OpenAudible Docker container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Run OpenAudible container
       docker_container:

@@ -1,5 +1,5 @@
 - name: Run Jackett container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Run Jackett container
       docker_container:

@@ -1,5 +1,5 @@
 - name: Run OMBI container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Start OMBI container
       docker_container:
