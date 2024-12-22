@@ -10,7 +10,7 @@ on:
 
 jobs:
   ansible:
-    runs-on: runner
+    runs-on: Runner
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
