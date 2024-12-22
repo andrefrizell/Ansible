@@ -1,27 +1,15 @@
-name: Deploy with Ansible
+name: Ansible files & Deployment 
 
 on:
+  push:
+    paths:
+      - 'playbooks/**'
   pull_request:
-    branches:
-      - main
-    types: [closed]
+    paths:
+      - 'playbooks/**'
 
 jobs:
-  deploy:
-    name: Deploy Ansible Playbook
-    if: github.event.pull_request.merged == true
-    runs-on: Runner
-    environment: production
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up SSH
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
-          chmod 600 private_key.pem
-          
-      - name: Install Ansible
-        shell: bash
-        run: |
-          sudo apt update
-          sudo apt install -y ansible
+  ansible-lint:
+    uses: ansible/ansible-content-actions/.github/workflows/ansible_lint.yaml@main
+    with:
+      args: '-p playbooks'
