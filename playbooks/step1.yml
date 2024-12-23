@@ -37,6 +37,15 @@
         state: latest
         update_cache: true
 
-    - name: Install Docker Module for Python
-      pip:
-        name: docker
+    - name: Make /Data directory exist
+      file:
+        path: /Data
+        state: directory
+
+    - name: Make /NVMe directory exist
+      file:
+        path: /NVMe
+        state: directory
+
+
+
