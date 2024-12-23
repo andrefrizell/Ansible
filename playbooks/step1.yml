@@ -56,7 +56,7 @@
           - /NVMe/Docker/emby:/config
           - /Data/Media:/Media
           - /NVMe:/NVMe/Emby
-        runtime: nvidia
+        runtime: "nvidia"
 
     - name: Radarr container
       docker_container:
