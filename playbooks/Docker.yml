@@ -13,18 +13,12 @@
           NVIDIA_DRIVER_CAPABILITIES: all
           NVIDIA_VISIBLE_DEVICES: all
           TZ: Europe/London
-        device_requests:
-          - capabilities: [gpu]
         ports:
           - "8096:8096"
           - "8920:8920"
-        volumes:
-          - /NVMe/Docker/emby:/config
-          - /NVMe/Emby:/NVMe
-          - /Data/Media:/Media
 
 - name: Run Radarr container
-  hosts: Pig
+  hosts: Test
   tasks:
     - name: Start Radarr container
       docker_container:
@@ -37,7 +31,3 @@
           PUID: 1000
           PGID: 1000
           TZ: Europe/London
-        volumes:
-          - /NVMe/Docker/Radarr:/config
-          - /Data/Media/Movies:/movies
-          - /Data/Downloads:/downloads
