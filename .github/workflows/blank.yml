@@ -3,10 +3,10 @@ name: Ansible files & Deployment
 on:
   push:
     paths:
-      - 'playbooks1/**'
+      - 'playbooks/**'
   pull_request:
     paths:
-      - 'playbooks1/**'
+      - 'playbooks/**'
 
 jobs:
   ansible:
@@ -31,6 +31,6 @@ jobs:
           echo Fda2qRs!!! | sudo -S apt-get install -y sshpass
 
       - name: Run Ansible playbook
-        run: ansible-playbook -i inventory/hosts.yml playbooks1/step1.yml
+        run: ansible-playbook -i inventory/hosts.yml playbooks/step1.yml
 
 

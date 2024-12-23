@@ -3,10 +3,10 @@ name: Docker contaners
 on:
   push:
     paths:
-      - 'playbooks/**'
+      - 'playbooks2/**'
   pull_request:
     paths:
-      - 'playbooks/**'
+      - 'playbooks2/**'
 
 jobs:
   ansible:
