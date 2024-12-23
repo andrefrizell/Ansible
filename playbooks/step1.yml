@@ -46,6 +46,18 @@
       file:
         path: /NVMe
         state: directory
+        
+    - name: Start Radarr container
+      docker_container:
+        name: Radarr
+        image: lscr.io/linuxserver/radarr
+        state: started
+        restart_policy: unless-stopped
+        network_mode: container:Surfshark
+        env:
+          PUID: 1000
+          PGID: 1000
+          TZ: Europe/London
 
 
 
