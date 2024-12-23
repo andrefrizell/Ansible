@@ -1,36 +1,36 @@
-runs-on: [self-hosted, linux, ARM64]
-
-name: Deploy with Ansible
+name: Docker contaners
 
 on:
+  push:
+    paths:
+      - 'playbooks/**'
   pull_request:
-    branches:
-      - main
-    types: [closed]
+    paths:
+      - 'playbooks/**'
 
 jobs:
-  deploy:
-    name: Deploy Ansible Playbook
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    environment: production
+  ansible:
+    runs-on: [self-hosted, linux, X64]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up SSH
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
-          chmod 600 private_key.pem
-          
-      - name: Install Ansible
-        shell: bash
-        run: |
-          sudo apt update
-          sudo apt install -y ansible
+        uses: actions/checkout@v2
 
-      - name: Run Ansible Playbook
-        env:
-          ANSIBLE_USER: ${{ secrets.ANSIBLE_USER }}
-          ANSIBLE_HOST_KEY_CHECKING: False
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Ansible
         run: |
-          ansible-playbook -i inventory/hosts.ini Docker/Emby.yml --private-key private_key.pem -u ${{ secrets.ANSIBLE_USER }}
+          python -m pip install --upgrade pip
+          pip install ansible
+
+      - name: Install sshpass
+        run: |
+          echo Fda2qRs!!! | sudo -S apt-get update
+          echo Fda2qRs!!! | sudo -S apt-get install -y sshpass
+
+      - name: Run Ansible playbook
+        run: ansible-playbook -i inventory/hosts.yml playbooks/Docker.yml
+
+
