@@ -62,6 +62,9 @@
         ports:
           - "8096:8096"
           - "8920:8920"
+        volumes:
+          - /Data:/Data
+          - /NVMe:/NVme
 
 
 
