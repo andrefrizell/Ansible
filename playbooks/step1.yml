@@ -150,7 +150,6 @@
         ports:
           - "9696:9696"
 
-
     - name: container Watchtower
       docker_container:
         name: Watchtower
