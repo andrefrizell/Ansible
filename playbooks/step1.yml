@@ -228,7 +228,7 @@
         capanilities:
           - NET_ADMIN
         devices :
-          - /dev/net/tun
+          - /dev/net/tun:/dev/net/tun
 
     - name: container Transmission
       docker_container:
