@@ -37,26 +37,7 @@
         state: latest
         update_cache: true
 
-    - name: Emby container
-      docker_container:
-        name: Emby
-        image: lscr.io/linuxserver/emby:latest
-        state: started
-        restart_policy: unless-stopped
-        env:
-          PUID: "1000"
-          PGID: "1000"
-          NVIDIA_DRIVER_CAPABILITIES: "all"
-          NVIDIA_VISIBLE_DEVICES: "all"
-          TZ: "Europe/London"
-        ports:
-          - "8096:8096"
-          - "8920:8920"
-        volumes:
-          - /NVMe/Docker/emby:/config
-          - /Data/Media:/Media
-          - /NVMe:/NVMe/Emby
-        runtime: "nvidia"
+
 
     - name: Radarr container
       docker_container:
