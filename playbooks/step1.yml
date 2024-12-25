@@ -251,7 +251,6 @@
           - /dev/net/tun
 
     - name: container Transmission
-      depends_on: Surfshark
       docker_container:
         name: Transmission
         image: lscr.io/linuxserver/transmission
