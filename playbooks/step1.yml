@@ -225,7 +225,7 @@
           WIREGUARD_ADDRESSES: "10.14.0.2/16"
           SERVER_COUNTRIES: "Netherlands"
         ports: 9091:9091
-        capanilities:
+        cap_add:
           - NET_ADMIN
         devices :
           - /dev/net/tun:/dev/net/tun
