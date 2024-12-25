@@ -135,10 +135,10 @@
         ports:
           - "5055:5055"
 
-    - name: Prowarr container
+    - name: Prowlarr container
       docker_container:
-        name: Prowarr
-        image: lscr.io/linuxserver/prowarr:latest
+        name: Prowlarr
+        image: lscr.io/linuxserver/prowlarr:latest
         state: started
         restart_policy: unless-stopped
         env:
@@ -146,7 +146,7 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - /NVMe/Docker/prowarr:/config
+          - /NVMe/Docker/prowlarra:/config
         ports:
           - "9696:9696"
 
