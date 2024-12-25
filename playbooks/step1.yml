@@ -138,7 +138,7 @@
     - name: Prowarr container
       docker_container:
         name: Prowarr
-        image: lscr.io/linuxserver/prowarr
+        image: lscr.io/linuxserver/prowarr:latest
         state: started
         restart_policy: unless-stopped
         env:
