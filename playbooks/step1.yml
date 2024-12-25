@@ -106,7 +106,7 @@
     - name: Linarr container
       docker_container:
         name: Linarr
-        image: lscr.io/linuxserver/linarr
+        image: lscr.io/linuxserver/lidarr:latest
         state: started
         restart_policy: unless-stopped
         env:
