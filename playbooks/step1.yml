@@ -182,7 +182,7 @@
     - name: container Guacamole
       docker_container:
         name: Guacamole
-        image: lscr.io/linuxserver/guacamole
+        image: lscr.io/linuxserver/guacd:latest
         state: started
         restart_policy: unless-stopped
         env:
