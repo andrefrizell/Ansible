@@ -212,7 +212,7 @@
     - name: container Surfshark
       docker_container:
         name: Surfshark
-        image: lqmcgaw/gluetun:latest
+        image: qmcgaw/gluetun:latest
         state: started
         restart_policy: unless-stopped
         env:
