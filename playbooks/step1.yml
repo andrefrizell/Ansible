@@ -169,42 +169,6 @@
         ports:
           - "9696:9696"
 
-    - name: container Surfshark
-      docker_container:
-        name: Surfshark
-        image: lqmcgaw/gluetun:latest
-        state: started
-        restart_policy: unless-stopped
-        env:
-          PUID: "1000"
-          PGID: "1000"
-          TZ: "Europe/London"
-          VPN_SERVICE_PROVIDER: "surfshark"
-          VPN_TYPE: "openvpn"
-          WIREGUARD_PRIVATE_KEY: "SAduTTn+OWGokQ7ygwTLbUXdk3Or/OCscvhWEPCiwE8="
-          WIREGUARD_ADDRESSES: "10.14.0.2/16"
-          SERVER_COUNTRIES: "Netherlands"
-        ports:
-          - "9091:9091"
-        capanilities:
-          - NET_ADMIN
-
-    - name: container Portainer
-      docker_container:
-        name: Portainer
-        image: portainer/portainer-ee:latest
-        state: started
-        restart_policy: always
-        env:
-          PUID: "1000"
-          PGID: "1000"
-          TZ: "Europe/London"
-        ports:
-          - "9443:9443"
-          - "8000:8000"
-        volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
-          - /NVMe/Docker/Portainer:/data
 
     - name: container Watchtower
       docker_container:
@@ -264,6 +228,45 @@
           - "8082:8082"
         volumes:
           - /NVMe/Docker/Bookstack:/config
+
+    - name: container Surfshark
+      docker_container:
+        name: Surfshark
+        image: lqmcgaw/gluetun:latest
+        state: started
+        restart_policy: unless-stopped
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+          VPN_SERVICE_PROVIDER: "surfshark"
+          VPN_TYPE: "wireguard"
+          WIREGUARD_PRIVATE_KEY: "SAduTTn+OWGokQ7ygwTLbUXdk3Or/OCscvhWEPCiwE8="
+          WIREGUARD_ADDRESSES: "10.14.0.2/16"
+          SERVER_COUNTRIES: "Netherlands"
+        ports: 9091:9091
+        capanilities:
+          - NET_ADMIN
+        devices :
+          - /dev/net/tun
+
+    - name: container Transmission
+      depends_on: Surfshark
+      docker_container:
+        name: Transmission
+        image: lscr.io/linuxserver/transmission
+        state: started
+        restart_policy: unless-stopped
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        ports:
+          - "9091:9091"
+        volumes:
+          - /NVMe/Docker/Transmission:/config
+          - /Data/Downloads:/downloads
+        network_mode: container:Surfshark
 
   
 
