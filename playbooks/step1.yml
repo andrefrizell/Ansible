@@ -240,8 +240,6 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-        ports:
-          - "9091:9091"
         volumes:
           - /NVMe/Docker/Transmission:/config
           - /Data/Downloads:/downloads
