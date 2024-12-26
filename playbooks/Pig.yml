@@ -329,5 +329,5 @@
         image: cloudflare/cloudflared:latest
         state: started
         restart_policy: unless-stopped
-        command: x tunnel --no-autoupdate run --token eyJhIjoiNjA1ZmUyODQ5YzM1N2JhNzM1YmY3MWQzNWNlNDhjMzciLCJ0IjoiM2U3OTFkNzktYzM5YS00MGUwLTg2OTctNjkwMmE2YTk0MWQ3IiwicyI6Ik1EQm1ZalV6WmprdFl6STNOaTAwWVdJNExUbGlNVEV0TVRZMU4yUTJNREUzT0dKbSJ9
+        command: tunnel --no-autoupdate run --token eyJhIjoiNjA1ZmUyODQ5YzM1N2JhNzM1YmY3MWQzNWNlNDhjMzciLCJ0IjoiM2U3OTFkNzktYzM5YS00MGUwLTg2OTctNjkwMmE2YTk0MWQ3IiwicyI6Ik1EQm1ZalV6WmprdFl6STNOaTAwWVdJNExUbGlNVEV0TVRZMU4yUTJNREUzT0dKbSJ9
         pull: true
