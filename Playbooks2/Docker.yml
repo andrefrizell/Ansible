@@ -73,8 +73,7 @@
           - /NVMe:/NVMe/Emby
         runtime: "nvidia"
 
-
-      - name: container CloudFlare
+    - name: container CloudFlare
       docker_container:
         name: CloudFlare
         image: cloudflare/cloudflared:latest
