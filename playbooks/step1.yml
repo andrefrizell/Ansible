@@ -252,7 +252,6 @@
         image: plexinc/pms-docker
         state: started
         restart_policy: unless-stopped
-        network_mode: physical
         env:
           TZ: "Europe/London"
           PLEX_CLAIM: "claim-oZzSS47tJhLYgfZFzFtm"
