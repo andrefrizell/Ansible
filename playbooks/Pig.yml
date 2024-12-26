@@ -316,6 +316,7 @@
           TZ: "Europe/London"
           NVIDIA_DRIVER_CAPABILITIES: "all"
           NVIDIA_VISIBLE_DEVICES: "all"
+        runtime: "nvidia"
 
         ports:
           - "8096:8096"
