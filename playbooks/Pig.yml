@@ -336,11 +336,3 @@
         command: tunnel --no-autoupdate run --token eyJhIjoiNjA1ZmUyODQ5YzM1N2JhNzM1YmY3MWQzNWNlNDhjMzciLCJ0IjoiM2U3OTFkNzktYzM5YS00MGUwLTg2OTctNjkwMmE2YTk0MWQ3IiwicyI6Ik1EQm1ZalV6WmprdFl6STNOaTAwWVdJNExUbGlNVEV0TVRZMU4yUTJNREUzT0dKbSJ9
         pull: true
 
-    - name: cockpit is configured
-      import_role:
-        name: crivetimihai.cockpit
-      vars:
-        cockpit_enable_service: true
-        cockpit_firewall_configure: true
-        cockpit_firewall_rules:
-          - port: 9090
