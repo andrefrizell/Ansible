@@ -150,7 +150,7 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - /NVMe/Docker/prowlarra:/config
+          - /NVMe/Docker/prowlarr:/config
         ports:
           - "9696:9696"
         pull: true
