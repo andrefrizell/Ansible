@@ -267,7 +267,7 @@
           - "32412:32412"
           - "32413:32413"
           - "32414:32414"
-        hostname: Pig
+        hostname: "Plex"
         volumes:
           - /NVMe/Docker/Plex:/config
           - /NVMe/Plex/transcode:/transcode
