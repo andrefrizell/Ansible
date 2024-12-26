@@ -259,7 +259,7 @@
 
     - name: container Plex
       docker_container:
-        name: plex
+        name: Plex
         image: plexinc/pms-docker
         state: started
         restart_policy: unless-stopped
