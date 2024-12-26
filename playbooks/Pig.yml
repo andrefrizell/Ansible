@@ -37,8 +37,6 @@
         state: latest
         update_cache: true
 
-
-
     - name: Radarr container
       docker_container:
         name: Radarr
