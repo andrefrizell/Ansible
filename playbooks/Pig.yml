@@ -105,9 +105,9 @@
           - "3579:3579"
         pull: true
 
-    - name: Linarr container
+    - name: Lidarr container
       docker_container:
-        name: Linarr
+        name: Lidarr
         image: lscr.io/linuxserver/lidarr:latest
         state: started
         restart_policy: unless-stopped
@@ -116,7 +116,7 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - /NVMe/Docker/Linarr:/config
+          - /NVMe/Docker/Lidarr:/config
           - /Data/Downloads:/downloads
           - /Data/Media/Music:/music
         ports:
