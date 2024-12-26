@@ -306,7 +306,6 @@
           - /Data:/sync
         pull: true
   
-
     - name: Emby container
       docker_container:
         name: Emby
