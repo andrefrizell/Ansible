@@ -89,7 +89,6 @@
           - "9117:9117"
         pull: true
         
-
     - name: Ombi container
       docker_container:
         name: Ombi
