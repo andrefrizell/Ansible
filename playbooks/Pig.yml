@@ -311,15 +311,7 @@
           - /NVMe/Docker/emby:/config
           - /Data/Media:/Media
           - /NVMe:/NVMe/Emby
-        device_requests: 
-          - device_ids: 0
-            driver: "nvidia"
-            capabilities: 
-              - gpu
-              - compute
-              - utility
-
-
+        
 
     - name: container CloudFlare
       docker_container:
