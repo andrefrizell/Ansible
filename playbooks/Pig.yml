@@ -105,7 +105,6 @@
           - "3579:3579"
         pull: true
 
-
     - name: Linarr container
       docker_container:
         name: Linarr
