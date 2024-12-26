@@ -71,6 +71,7 @@
           - /Data/Downloads:/downloads
         ports:
           - "8989:8989"
+        pull: true
 
     - name: Jackett container
       docker_container:
@@ -86,6 +87,8 @@
           - /NVMe/Docker/Jackett:/config
         ports:
           - "9117:9117"
+        pull: true
+        
 
     - name: Ombi container
       docker_container:
@@ -101,6 +104,7 @@
           - /NVMe/Docker/OMBI:/config
         ports:
           - "3579:3579"
+        pull: true
 
 
     - name: Linarr container
@@ -119,6 +123,7 @@
           - /Data/Media/Music:/music
         ports:
           - "8686:8686"
+        pull: true
   
     - name: Overseerr container
       docker_container:
@@ -134,6 +139,7 @@
           - /NVMe/Docker/Overseerr:/config
         ports:
           - "5055:5055"
+        pull: true
 
     - name: Prowlarr container
       docker_container:
@@ -149,6 +155,7 @@
           - /NVMe/Docker/prowlarra:/config
         ports:
           - "9696:9696"
+        pull: true
 
     - name: container Watchtower
       docker_container:
@@ -163,6 +170,7 @@
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
         command: --cleanup
+        pull: true
 
     - name: container Heimdall
       docker_container:
@@ -179,6 +187,7 @@
           - "443:4443"
         volumes:
           - /NVMe/Docker/Heimdall:/config
+        pull: true
           
     - name: container Guacamole
       docker_container:
@@ -194,6 +203,7 @@
           - "4822:4822 "
         volumes:
           - /NVMe/Docker/Guacamole:/config
+        pull: true
 
     - name: container Bookstack
       docker_container:
@@ -209,6 +219,7 @@
           - "6875:6875"
         volumes:
           - /NVMe/Docker/Bookstack:/config
+        pull: true
 
     - name: container Surfshark
       docker_container:
@@ -230,6 +241,7 @@
           - NET_ADMIN
         devices :
           - /dev/net/tun:/dev/net/tun
+        pull: true
 
     - name: container Transmission
       docker_container:
@@ -245,6 +257,7 @@
           - /NVMe/Docker/Transmission:/config
           - /Data/Downloads:/downloads
         network_mode: container:Surfshark
+        pull: true
 
     - name: container Plex
       docker_container:
@@ -272,6 +285,7 @@
           - /NVMe/Docker/Plex:/config
           - /NVMe/Plex/transcode:/transcode
           - /Data/Media:/data
+        pull: true
 
     - name: container Resilio Sync
       docker_container:
@@ -290,6 +304,7 @@
           - /NVMe/Docker/Sync:/config
           - /Data:/Data
           - /Data:/sync
+        pull: true
   
 
     - name: Emby container
@@ -309,6 +324,7 @@
           - /NVMe/Docker/emby:/config
           - /Data/Media:/Media
           - /NVMe:/NVMe/Emby
+        pull: true
         
 
     - name: container CloudFlare
@@ -318,3 +334,4 @@
         state: started
         restart_policy: unless-stopped
         command: x tunnel --no-autoupdate run --token eyJhIjoiNjA1ZmUyODQ5YzM1N2JhNzM1YmY3MWQzNWNlNDhjMzciLCJ0IjoiM2U3OTFkNzktYzM5YS00MGUwLTg2OTctNjkwMmE2YTk0MWQ3IiwicyI6Ik1EQm1ZalV6WmprdFl6STNOaTAwWVdJNExUbGlNVEV0TVRZMU4yUTJNREUzT0dKbSJ9
+        pull: true
