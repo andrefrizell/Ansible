@@ -311,6 +311,13 @@
           - /NVMe/Docker/emby:/config
           - /Data/Media:/Media
           - /NVMe:/NVMe/Emby
+        device\_requests: 
+         - device\_ids: 0
+            driver: nvidia
+            capabilities: 
+              - gpu
+              - compute
+              - utility
         runtime: "nvidia"
 
 
