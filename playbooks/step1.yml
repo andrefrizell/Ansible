@@ -253,7 +253,6 @@
         state: started
         restart_policy: unless-stopped
         network_mode: physical
-        ip_address: <IPAddress>
         env:
           TZ: "Europe/London"
           PLEX_CLAIM: "claim-oZzSS47tJhLYgfZFzFtm"
