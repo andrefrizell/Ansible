@@ -1,7 +1,6 @@
 - hosts: Pig
   become: true
 
-
   tasks:
     - name: Install aptitude
       apt:
