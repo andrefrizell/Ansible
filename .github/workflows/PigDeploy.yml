@@ -35,3 +35,6 @@ jobs:
       - name: Run Ansible playbook
         run: ansible-playbook -i inventory/hosts.yml playbooks/Pig.yml
 
+      - name: Run Ansible playbook
+        run: ansible-playbook -i inventory/hosts.yml playbooks/KVM.yml
+
