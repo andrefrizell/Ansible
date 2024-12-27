@@ -10,7 +10,6 @@ on:
   schedule:
     - cron: '0 3 * * *'
   
-
 jobs:
   ansible:
     runs-on: [self-hosted, linux, X64]
