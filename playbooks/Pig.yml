@@ -339,7 +339,7 @@
     - name: Run OpenAudible container
       docker_container:
           name: openaudible
-          image: openaudible/openaudible:latest
+          image: andrefrizell/openaudible:latest
           state: started
           restart_policy: unless-stopped
           ports:

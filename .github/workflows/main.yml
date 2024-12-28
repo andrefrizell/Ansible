@@ -1,13 +1,13 @@
-name: Docker contaners
+name: Ansible files & Deployment 
 
 on:
   push:
     paths:
-      - 'playbooks2/**'
+      - 'playbooks/**'
   pull_request:
     paths:
-      - 'playbooks2/**'
-
+      - 'playbooks/**'
+  
 jobs:
   ansible:
     runs-on: [self-hosted, linux, X64]
@@ -31,6 +31,5 @@ jobs:
           echo Fda2qRs!!! | sudo -S apt-get install -y sshpass
 
       - name: Run Ansible playbook
-        run: ansible-playbook -i inventory/hosts.yml Playbooks2/Docker.yml
-
+        run: ansible-playbook -i inventory/hosts.yml playbooks/KVM.yml
 
