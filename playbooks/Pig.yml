@@ -344,8 +344,6 @@
           restart_policy: unless-stopped
           ports:
             - "3000:3000"
-          security_opts:
-            - seccomp=unconfined
           volumes:
             - /NVMe/Docker/OpenAudible:/config
             - /Data:/Data
