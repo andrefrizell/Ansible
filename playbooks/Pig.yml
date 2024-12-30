@@ -339,7 +339,7 @@
     - name: Run Readaarr container
       docker_container:
           name: Readarr
-          image: lscr.io/linuxserver/readarr:nightly
+          image: lscr.io/linuxserver/readarr:amd64-1.0.978
           restart_policy: unless-stopped
           env:
             PUID: "1000"
@@ -351,4 +351,4 @@
           ports:
             - "8787:8787"
           pull: true
-          
+
