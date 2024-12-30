@@ -1,6 +1,9 @@
 name: Ansible files & Deployment 
 
-on:
+on: 
+  push:
+    paths:
+      - 'playbooks/**'
   
 jobs:
   ansible:
