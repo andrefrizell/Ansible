@@ -1,6 +1,0 @@
-- name: Run Emby container
-  hosts: Pig
-  tasks:
-    - name: Create VM on KVM
-      community.libvirt.virt:
-        nam
