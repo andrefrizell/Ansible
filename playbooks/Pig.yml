@@ -341,7 +341,7 @@
     - name: Run Readaarr container
       docker_container:
           name: readarr
-          image: lscr.io/linuxserver/readarr:latest
+          image: lscr.io/linuxserver/readarr
           state: started
           restart_policy: unless-stopped
           env:
