@@ -1,12 +1,6 @@
 name: Ansible files & Deployment 
 
 on:
-  push:
-    paths:
-      - 'playbooks/**'
-  pull_request:
-    paths:
-      - 'playbooks/**'
   
 jobs:
   ansible:
