@@ -24,6 +24,4 @@ jobs:
           echo Fda2qRs!!! | sudo -S apt-get update
           echo Fda2qRs!!! | sudo -S apt-get install -y sshpass
 
-      - name: Run Ansible playbook
-        run: ansible-playbook -i inventory/hosts.yml playbooks/KVM.yml
 
