@@ -348,3 +348,20 @@
             - /NVMe/Docker/OpenAudible:/config
             - /Data:/Data
           pull: true
+
+    - name: Run Readaarr container
+      docker_container:
+          name: readarr
+          image: lscr.io/linuxserver/readarr:latest
+          state: started
+          restart_policy: unless-stopped
+          env:
+            PUID: "1000"
+            PGID: "1000"
+            TZ: "Europe/London"
+          volumes:
+            - /NVMe/Docker/Readarr:/config
+            - /Data/Media/OpenAudible/books:/books
+          ports:
+            - "8787:8787"
+          pull: true
