@@ -1,4 +1,4 @@
-name: Ansible files & Deployment 
+name: Pig Deploy
 
 on:
   push:
