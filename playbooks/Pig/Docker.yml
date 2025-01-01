@@ -338,7 +338,7 @@
     - name: Run Readaarr container
       docker_container:
           name: Readarr
-          image: lscr.io/linuxserver/amd64-nightly-version-0.4.1.2646
+          image: lscr.io/linuxserver/readarr
           restart_policy: unless-stopped
           env:
             PUID: "1000"
