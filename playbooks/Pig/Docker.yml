@@ -214,7 +214,7 @@
           PGID: "1000"
           TZ: "Europe/London"
         ports:
-          - 6875:80"
+          - 6875:6875"
         volumes:
           - /NVMe/Docker/Bookstack:/config
         pull: true
