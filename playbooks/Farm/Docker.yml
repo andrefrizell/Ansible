@@ -36,3 +36,35 @@
         name: docker-ce
         state: latest
         update_cache: true
+    
+    - name: container Resilio Sync
+      docker_container:
+        name: resilio-sync
+        image: lscr.io/linuxserver/resilio-sync:latest
+        state: started
+        restart_policy: unless-stopped
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        ports:
+          - "8888:8888"
+          - "55555:55555"
+        volumes:
+          - /Docker/Sync:/config
+          - /Backup:/sync
+        pull: true
+
+    - name: Run Portainer Agent container
+      docker_container:
+        name: portainer_agent
+        image: portainer/agent:2.21.5
+        state: started
+        restart_policy: always
+        ports:
+          - "9001:9001"
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - /var/lib/docker/volumes:/var/lib/docker/volumes
+          - /:/host
+        pull: true
