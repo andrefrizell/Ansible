@@ -1,7 +1,6 @@
 - hosts: FarmPi
   become: true
 
-
   tasks:
     - name: Install aptitude
       apt:
