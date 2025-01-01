@@ -3,10 +3,10 @@ name: Ansible files & Deployment
 on:
   push:
     paths:
-      - 'playbooks/**'
+      - 'playbooks/Pig/**'
   pull_request:
     paths:
-      - 'playbooks/**'
+      - 'playbooks/Pig/**'
   schedule:
     - cron: '0 3 * * *'
   
@@ -33,7 +33,7 @@ jobs:
           echo Fda2qRs!!! | sudo -S apt-get install -y sshpass
 
       - name: Run Ansible playbook
-        run: ansible-playbook -i inventory/hosts.yml playbooks/Pig.yml
+        run: ansible-playbook -i inventory/hosts.yml playbooks/Pig/Docker.yml
 
 
 
